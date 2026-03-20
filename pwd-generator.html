@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="card">
+        <h1>simple Password generator</h1>
+
+        <div class="row">
+            <input id="upper" type="checkbox"  checked>
+            <label>Include A-Z (uppercase)</label>
+        </div>
+        
+        <div class="row">
+            <input id="lower" type="checkbox"  checked>
+            <label>Include a-z (Lowercase)</label>h
+        </div>
+        
+        <div class="row">
+            <input id="number" type="checkbox"  checked>
+            <label">Include 0-9(Number)</label>
+        </div>
+
+        <div class="row">
+            <input id="symbols" type="checkbox" checked>
+            <label for="">Include @ # $</label>
+        </div>
+
+        <div class="row">
+            <label>Length:</label>
+            <input id="length" type="number">
+        </div>
+
+        <div>
+            <input id="output" type="text" placeholder="your Passwordwill appear">
+        </div>
+
+        <div class="controls">
+            <button id="generate">Generator</button>
+            <button id="clear">clear</button>
+        </div>
+
+    </div>
+
+    <script>
+        const upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const lower = 'abcdefghijklmnopqrstuvwxyz';
+        const nums = '0123456789';
+        const syms = '@ # $';
+
+        document.getElementById("generate").addEventListener('click',generate);
+
+        document.getElementById("clear").addEventListener('click',() => {
+            document.getElementById("output").value ='';
+        });
+
+        function  generate(){
+            const parts = [];
+
+            if(document.getElementById("upper").checked){
+                parts.push(upper);
+            }
+            if(documennt.getElementById("lower").checked){
+                parts.push(lower);
+            }
+            if(document.getElementById("number").checked){
+                parts.push(nums);
+            }
+            if(document.getElementById("symbols").checked){
+                parts.push(syms);
+            }
+
+
+        }
+
+    </script>
+</body>
+</html>
